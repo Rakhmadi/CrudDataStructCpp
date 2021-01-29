@@ -20,12 +20,11 @@ void delData(Mahasiswa *first, Mahasiswa *last);
 int menu();
 string getGrade(int nilai);
 
-// fucntion
-
-bool ifEmpty(Mahasiswa *first){
+// function 
+bool ifEmpty(Mahasiswa *first){ // cel data
    return (first == NULL) ?  true :  false;
 }
-
+// function untuk handel grade
 string getGrade(int nilai){
     if (nilai >= 85 && nilai <= 100){
        return "A";
@@ -117,7 +116,7 @@ void viewList(Mahasiswa *now){
              cout << "  Nama       : " << now->NAMA <<endl;
              cout << "  Kelas      : " << now->KELAS <<endl;
              cout << "  Nilai      : " << now->NILAI <<endl;
-             cout << "  Grade      : " << getGrade(now->NILAI)<<endl;
+             cout << "  Grade      : " << getGrade(now->NILAI)<<endl; // execute function getGrade() , return grade  
              cout << "====================================\n" ;
              now = now->next;
          }
@@ -125,8 +124,10 @@ void viewList(Mahasiswa *now){
 }
 
 int main(){
+    
      Mahasiswa *first = NULL;
      Mahasiswa *last = NULL;
+
      int pilih, NILAI;
      string NIM, NAMA, KELAS;
 
@@ -135,6 +136,7 @@ int main(){
          pilih = menu();
          switch (pilih){
          case 1: 
+          // input Data
               cin.ignore();
               cout << "====================================\n" ;
               cout << " Masukan Data Mahasiswa\n";
@@ -151,11 +153,13 @@ int main(){
               system("pause");
              break;
          case 2:
+          // delete data
               delData(first,last);
               cout << "Data Terakhir Terhapus\n";
               system("pause");
              break;
          case 3:
+          // lihat list
               system("cls");
               viewList(first);
               system("pause");

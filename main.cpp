@@ -21,7 +21,7 @@ int menu();
 string getGrade(int nilai);
 
 // function 
-bool ifEmpty(Mahasiswa *first){ // cel data
+bool ifEmpty(Mahasiswa *first){ // cek if data exits
    return (first == NULL) ?  true :  false;
 }
 // function untuk handel grade
